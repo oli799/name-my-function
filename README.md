@@ -14,7 +14,7 @@ You can download Name My Function from the [VSCode Marketplace.](https://marketp
 
 ## 🤝 Contributing
 
-Pull requests are welcome.
+Pull requests are [welcome.](https://github.com/oli799/name-my-function/blob/main/assets/basic-usage.gif)
 
 ---
 
