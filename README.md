@@ -6,7 +6,7 @@ This simple extension will help you to name your functions consistently.
 
 ## 🏃 Getting Started
 
-You can download Name My Function from the [VSCode Marketplace.](https://marketplace.visualstudio.com/vscode)
+You can download Name My Function from the [VSCode Marketplace.](https://marketplace.visualstudio.com/items?itemName=r-dev.name-my-function)
 
 ### Usage:
 

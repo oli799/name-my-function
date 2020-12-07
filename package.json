@@ -2,8 +2,8 @@
     "name": "name-my-function",
     "displayName": "Name My Function",
     "description": "Help you to name your functions consistently.",
-    "icon": "https://github.com/oli799/name-my-function/blob/main/assets/icon.png",
-    "publisher": "oli799",
+    "icon": "assets/icon.png",
+    "publisher": "r-dev",
     "repository": "https://github.com/oli799/name-my-function",
     "version": "0.0.1",
     "engines": {
