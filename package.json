@@ -2,6 +2,7 @@
     "name": "name-my-function",
     "displayName": "Name My Function",
     "description": "Help you to name your functions consistently.",
+    "icon": "https://github.com/oli799/name-my-function/blob/main/assets/icon.png",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.51.0"
