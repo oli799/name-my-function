@@ -5,15 +5,26 @@
     "icon": "assets/icon.png",
     "publisher": "r-dev",
     "repository": "https://github.com/oli799/name-my-function",
-    "version": "0.0.1",
+    "version": "0.0.5",
     "engines": {
         "vscode": "^1.51.0"
     },
     "categories": [
-        "Other"
+        "Other",
+        "Programming Languages",
+        "Formatters"
+    ],
+    "keywords": [
+        "javascript",
+        "typescript",
+        "ts",
+        "js",
+        "javascriptreact",
+        "typescriptreact"
     ],
     "activationEvents": [
-        "onCommand:name-my-function.genarateName"
+        "onCommand:name-my-function.genarateName",
+        "onCommand:name-my-function.checkNames"
     ],
     "main": "./out/extension.js",
     "contributes": {
@@ -21,6 +32,10 @@
             {
                 "command": "name-my-function.genarateName",
                 "title": "Name My Function: Generate"
+            },
+            {
+                "command": "name-my-function.checkNames",
+                "title": "Name My Function: Check"
             }
         ]
     },

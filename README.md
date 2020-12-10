@@ -10,11 +10,11 @@ You can download Name My Function from the [VSCode Marketplace.](https://marketp
 
 ### Usage:
 
-## ![Basic Usage](https://github.com/oli799/name-my-function/blob/main/assets/basic-usage.gif)
+## ![Basic Usage](https://github.com/oli799/name-my-function/blob/main/assets/basic-usage.gif?raw=true)
 
 ## 🤝 Contributing
 
-Pull requests are welcome.
+Pull requests are [welcome](https://github.com/oli799/name-my-function).
 
 ---
 
