@@ -14,9 +14,20 @@ You can download Name My Function from the [VSCode Marketplace.](https://marketp
 
 ![Basic Usage](https://github.com/oli799/name-my-function/blob/main/assets/basic-usage.gif?raw=true)
 
+
 ## 🤝 Contributing
 
-Pull requests are [welcome](https://github.com/oli799/name-my-function).
+To contribute to this repository, feel free to create a new fork of the repository and submit a pull request.
+
+1. Fork / Clone and select the `main` branch.
+2. Create a new branch in your fork.
+3. Make your changes.
+4. Commit your changes, and push them.
+5. Submit a Pull Request [here](https://github.com/oli799/name-my-function/pulls)!
+
+## 📋 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
