@@ -53,25 +53,36 @@ function highlightDecorators(onlyActive: boolean = false) {
 }
 
 function decorate(editor: vscode.TextEditor) {
-    let sourceCode = editor.document.getText();
-    let regex = /@[A-Za-z]+/;
-    let decorationsArray: vscode.DecorationOptions[] = [];
+    const regex = /@[A-Za-z]+/g;
+    const sourceCode = editor.document.getText();
+    const decorationsArray: vscode.DecorationOptions[] = [];
 
     const sourceCodeLines = sourceCode.split('\n');
 
     for (let line = 0; line < sourceCodeLines.length; line++) {
-        let match = sourceCodeLines[line].match(regex);
+        const currentLine = sourceCodeLines[line];
+        const matches = currentLine.match(regex);
 
-        if (match !== null && match.index !== undefined) {
-            let range = new vscode.Range(
-                new vscode.Position(line, match.index),
-                new vscode.Position(line, match.index + match[0].length)
-            );
+        if (matches !== null) {
+            if (matches.index === undefined) {
+                matches.map((match) => {
+                    const startPos = currentLine.indexOf(match);
+                    const endPos = startPos + match.length;
 
-            let decoration = { range };
-            console.log(decoration);
+                    let range = new vscode.Range(
+                        new vscode.Position(line, startPos),
+                        new vscode.Position(line, endPos)
+                    );
 
-            decorationsArray.push(decoration);
+                    decorationsArray.push({ range });
+                });
+            } else {
+                let range = new vscode.Range(
+                    new vscode.Position(line, matches.index),
+                    new vscode.Position(line, matches.index + matches[0].length)
+                );
+                decorationsArray.push({ range });
+            }
         }
     }
 
