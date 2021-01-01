@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { testDecoratorType } from './decoratorTypes';
+import { highlightRules, highlightProblems } from './decoratorTypes';
 
 export async function init() {
 	let activeEditor = vscode.window.activeTextEditor;
@@ -93,21 +93,47 @@ function decorate(editor: vscode.TextEditor) {
 				decorationsArray.push({ range });
 			}
 
-			// line + 1 = current line (loop is starts from 0)
-			// line + 2 = next line
-			checkFunctionName(matches, sourceCodeLines[line + 1], line + 2);
+			// line + 1 => next line
+			checkFunctionName(
+				matches,
+				sourceCodeLines[line + 1],
+				line + 1,
+				editor
+			);
 		}
 	}
 
-	editor.setDecorations(testDecoratorType, decorationsArray);
+	editor.setDecorations(highlightRules, decorationsArray);
 }
 
 function checkFunctionName(
 	validators: RegExpMatchArray,
 	line: string,
-	lineNumber: number
+	lineNumber: number,
+	editor: vscode.TextEditor
 ) {
-	validators.map((validator) => {});
+	// @ts-ignore: Object is possibly 'null'.
+	const functionName = line.match(/function(.*?)\(/)[1].trim();
+	const decorationsArray: vscode.DecorationOptions[] = [];
+	let valid = false;
+
+	validators.map((validator) => {
+		valid = validName(validator, functionName);
+	});
+
+	if (!valid) {
+		const currentLine = editor.document.lineAt(lineNumber);
+		const range = new vscode.Range(
+			currentLine.range.start,
+			currentLine.range.end
+		);
+
+		decorationsArray.push({ range });
+	}
+
+	editor.setDecorations(highlightProblems, decorationsArray);
 }
 
-//function isNameValid(name, validators) {}
+function validName(validator: string, name: string): boolean {
+	return false;
+}
